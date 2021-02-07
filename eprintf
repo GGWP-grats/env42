@@ -1,0 +1,4 @@
+#!/bin/bash
+git clone https://github.com/gavinfielder/pft.git pft && echo "pft/" >> .gitignore
+git clone https://github.com/Mazoise/42TESTERS-PRINTF.git
+

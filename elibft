@@ -1,0 +1,20 @@
+#!/bin/bash
+if [[ "$#" -ne 1 ]]; then
+	echo "Usage elibft <repo to test>";
+fi
+if [[ -e ./libeval ]];then 
+	rm -rf libeval
+fi
+git clone $1 libeval 2>/dev/null
+if  [[ $? -eq 0 ]]; then
+	cd libeval
+	mkdir libft && mv ft_* Makefile libft.h libft
+	git clone https://github.com/saugustu42/test-libft.git
+	cd test-libft/ && ./clone.sh $1 && cd ..
+	git clone https://github.com/ska42/libft-war-machine.git #sed the path in my_config.sh
+	git clone https://github.com/alelievr/libft-unit-test.git
+	git clone https://github.com/jtoty/Libftest.git #should sed the LIBFT_PATH in my_config.sh
+elif [[ "$#" -eq 1 ]]; then
+	echo "Error:Invalid git repo"
+	exit 1
+fi

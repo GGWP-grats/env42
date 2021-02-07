@@ -1,0 +1,9 @@
+#!/bin/bash
+
+git clone https://github.com/Mazoise/42TESTERS-GNL.git 42test
+git clone https://github.com/charMstr/GNL_lover.git lover
+git clone https://github.com/Hellio404/Get_Next_Line_Tester.git
+git clone https://github.com/harm-smits/gnl-unit-test.git unit
+
+cp get* lover/copy_in_here_GNL_files/
+cp get* unit
